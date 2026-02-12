@@ -1,0 +1,169 @@
+*, *::before,*::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    
+}
+
+:root {
+    --Red: hsl(0, 78%, 62%);
+    --Cyan: hsl(180, 62%, 55%);
+    --Orange: hsl(34, 97%, 64%);
+    --Blue: hsl(212, 86%, 64%);
+    --Grey-500: hsl(234, 12%, 34%);
+    --Grey-400: hsla(210, 6%, 44%, 0.25);
+    --White: hsl(0, 0%, 100%);
+
+}
+
+.attribution { 
+    font-size: 11px; text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+html {
+    font-size: 15px;
+    font-family: "Poppins", "Arial", "sans-serif";
+}
+
+main {
+    display: flex;
+    flex-flow: column nowrap;
+    color: var(--Grey-500);
+    margin-top: 3rem;
+    padding: 0 1rem;
+}
+
+.bold {
+    font-weight: 600;
+}
+
+.title {
+    margin: 0 auto;
+    width: clamp(300px, 100%, 400px);
+}
+
+h1 {
+    font-size: 1.7rem;
+    font-weight: 200;
+    text-align: center;
+
+}
+
+.description {
+    margin: 1rem 0;
+    text-align: center;
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: auto;
+    margin: 2rem 0;
+    gap: 2rem 0;
+    justify-content: center;
+
+
+}
+
+.card {
+    text-align: right;
+    padding: 2rem 1.5rem;
+    border-radius: 0.5rem;
+    border-top-left-radius: 0.3rem;
+    border-top-right-radius: 0.3rem;
+    box-shadow: 0 5px 0.8rem 0px var(--Grey-400);
+    max-width: 350px;
+    min-width: 300px;
+}
+
+.card h2 {
+    font-size: 1.3rem;
+
+}
+
+.card h2, .card p {
+    text-align: left;
+}
+
+.card p {
+    font-weight: 200;
+    margin: 0.5rem 0;
+    font-size: 1rem;
+
+}
+
+.card img {
+    margin: 1.8rem 0 0.5rem;
+
+}
+
+.card:nth-child(1) {
+    border-top: 0.3rem solid var(--Cyan);
+}
+
+.card:nth-child(2) {
+    border-top: 0.3rem solid var(--Red);
+    
+}
+
+.card:nth-child(3) {
+    border-top: 0.3rem solid var(--Orange);
+    
+}
+
+.card:nth-child(4) {
+    border-top: 0.3rem solid var(--Blue);
+    
+}
+
+@media screen and (min-width: 1024px) {
+    html {
+        font-size: 15px;
+    }
+    
+    .title {
+        margin: 4rem auto 0;
+        width: clamp(300px, 100%, 450px);
+    }
+    .title span {
+        display: block;
+    }
+
+    .card-container {
+        grid-template-areas: 
+        ". b ."
+        "a b d"
+        "a c d"
+        ". c .";
+        gap: 2rem;
+        max-width: fit-content;
+        margin: 4rem auto 6rem;
+    }
+
+    
+    .card {
+        width: clamp(300px, 100%, 350px);
+    }
+
+    .card:nth-child(1) {
+        grid-area: a;
+    }
+    
+    .card:nth-child(2) {
+        grid-area: b;
+    }
+    
+    .card:nth-child(3) {
+        grid-area: c;
+    }
+    
+    .card:nth-child(4) {
+        grid-area: d;
+    }
+}
+
